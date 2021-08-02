@@ -1,7 +1,7 @@
 import { makeSchema } from 'nexus'
-import { join } from 'path'
-import * as Query from './queries'
-import * as types from './types'
+import { resolve } from 'path'
+import * as Query from './queries/index.js'
+import * as types from './types/index.js'
 
 export const schema = makeSchema({
   types: {
@@ -9,7 +9,7 @@ export const schema = makeSchema({
     ...types
   },
   outputs: {
-    typegen: join(__dirname, '..', 'nexus-typegen.ts'),
-    schema: join(__dirname, '..', 'schema.graphql'),
+    typegen: resolve('../nexus-typegen.ts'),
+    schema: resolve('../schema.graphql'),
   }
 })
