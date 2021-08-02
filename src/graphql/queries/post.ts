@@ -6,7 +6,7 @@ export default extendType({
     t.field('drafts', {
       type: nonNull(list('Post')),
       resolve() {
-        return [{ id: 1, title: 'Nexus', body: '...', published: false }]
+        return [{ id: '1', title: 'Nexus', body: '...', published: false }]
       }
     })
   }
